@@ -1,4 +1,4 @@
-#2
+#Ping message
 set ns [new Simulator]
 set nf [open lab2.nam w]
 $ns namtrace-all $nf
