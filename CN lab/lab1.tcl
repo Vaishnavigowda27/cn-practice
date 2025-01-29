@@ -1,4 +1,4 @@
-#1 
+# Implement 3 nodes point to point network with duplex link between them . Set the queue size, vary the bandwidth and find the number of packets dropped.
 set ns [new Simulator]
 set tf [open lab1.tr w]
 $ns trace-all $tf
