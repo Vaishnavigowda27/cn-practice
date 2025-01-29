@@ -1,4 +1,4 @@
-#10
+#Wireless LAN
 
 set ns [new Simulator]
 set na [open wireless_lan.nam w]
