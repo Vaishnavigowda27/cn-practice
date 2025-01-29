@@ -1,4 +1,4 @@
-# 9
+# Go back N
 
 set ns [new Simulator]
 set tr [ open out.tr w ]
