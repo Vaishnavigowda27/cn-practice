@@ -1,8 +1,8 @@
 #Bus topology
 
 set ns [new Simulator]
-$ns color 1 blue
-$ns color 2 red
+# $ns color 1 blue
+# $ns color 2 red
 set tr [open lab9.tr w]
 $ns trace-all $tr
 set nam [open lab9.nam w]
@@ -22,6 +22,7 @@ set sink [new Agent/TCPSink]
 $ns attach-agent $n1 $tcp
 $ns attach-agent $n5 $sink
 $ns connect $tcp $sink
+
 set cbr [new Application/Traffic/CBR]
 $cbr attach-agent $tcp
 $tcp set fid_ 1
