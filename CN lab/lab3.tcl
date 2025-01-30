@@ -1,10 +1,8 @@
 #Ethernet LAN
 
 set ns [ new Simulator ]
-
 set tr [ open out.tr w ]
 $ns trace-all $tr
-
 set nam [ open out.nam w ]
 $ns namtrace-all $nam 
 
