@@ -1,10 +1,8 @@
 #Stop and Wait
 
 set ns [ new Simulator ]
-
 set tr [ open out.tr w ]
 $ns trace-all $tr
-
 set nam [ open out.nam w ]
 $ns namtrace-all $nam
 
@@ -20,13 +18,11 @@ $ns duplex-link $n0 $n1 0.2Mb 200ms DropTail
 
 set tcp [ new Agent/TCP ]
 set sink [ new Agent/TCPSink ]
-
 $tcp set window_ 1
 $tcp set maxcwnd_ 1
 
 $ns attach-agent $n0 $tcp
 $ns attach-agent $n1 $sink
-
 $ns connect $tcp $sink
 
 set cbr [ new Application/Traffic/CBR ]
@@ -36,7 +32,7 @@ $ns add-agent-trace $tcp tcp
 $ns monitor-agent-trace $tcp
 $tcp set tracevar cwnd_
 
-proc finish {} {
+        proc finish {} {
 	global ns tr nam
 	$ns flush-trace
 	close $nam
