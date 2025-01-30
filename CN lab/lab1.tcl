@@ -21,16 +21,20 @@ set n2 [$ns node]
 
 $ns duplex-link $n0 $n1 1Mb 10ms DropTail 
 $ns duplex-link $n1 $n2 1Mb 10ms DropTail
+
 $ns queue-limit $n0 $n1 10
 $ns queue-limit $n1 $n2 10
+
 set tcp [new Agent/TCP]
 $ns attach-agent $n0 $tcp
+
 set sink [new Agent/TCPSink]
 $ns attach-agent $n2 $sink
 $ns connect $tcp $sink
-set cbr [new Application/Traffic/CBR]
 
+set cbr [new Application/Traffic/CBR]
 $cbr attach-agent $tcp
+
 $ns at 0.0 "$cbr start"
 $ns at 2.0 "finish"
 $ns run
