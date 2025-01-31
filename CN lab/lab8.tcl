@@ -8,10 +8,12 @@ $ns namtrace-all $nam
 
 set n0 [$ns node]
 set n1 [$ns node]
+
 $ns duplex-link $n0 $n1 0.2Mb 200ms DropTail
 
 set tcp [new Agent/TCP]
 $ns attach-agent $n0 $tcp
+
 set sink [new Agent/TCPSink]
 $ns attach-agent $n1 $sink
 $ns connect $tcp $sink
